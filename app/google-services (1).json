@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "163391496387",
+    "project_id": "anfel-fc2c5",
+    "storage_bucket": "anfel-fc2c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163391496387:android:80fb82f70c3598286cc276",
+        "android_client_info": {
+          "package_name": "com.example.anfelsakni"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA76WRxkS0V4jRnoHSVN7YQ4DaJPXfoPJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163391496387:android:c68249086ee6d4286cc276",
+        "android_client_info": {
+          "package_name": "com.example.formation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA76WRxkS0V4jRnoHSVN7YQ4DaJPXfoPJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
