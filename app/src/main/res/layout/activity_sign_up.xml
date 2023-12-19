@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".SignUpActivity">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -14,17 +17,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:text="Please sign up"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:text="please sign in"
             android:textColor="@color/colorApp"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textStyle="bold|italic" />
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_alignParentRight="true"
-            android:layout_margin="15sp"
+            android:layout_marginStart="15sp"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="15sp"
+            android:layout_marginEnd="25sp"
+            android:layout_marginRight="15sp"
+            android:layout_marginBottom="15sp"
             android:src="@drawable/cyborg" />
 
 
@@ -39,48 +52,73 @@
         android:padding="20sp">
 
         <EditText
+            android:id="@+id/fullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Full name"
             android:inputType="text"
-            android:padding="15sp"
-            android:textStyle="bold" />
+            android:drawableEnd="@drawable/ic_personne"
+            android:padding="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20sp"/>
 
         <EditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="e-mail"
             android:inputType="text"
-            android:padding="15sp"
-            android:textStyle="bold" />
-
+            android:padding="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20sp"
+            android:drawableEnd="@drawable/ic_email"/>
         <EditText
+            android:id="@+id/phoneNumber"
             android:layout_width="320dp"
             android:layout_height="match_parent"
-            android:hint="phone"
-            android:inputType="number|phone"
-            android:padding="15sp"
-            android:textStyle="bold" />
+            android:hint="phone number"
+            android:inputType="number"
+            android:padding="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20sp"
+            android:drawableEnd="@drawable/ic_phone"/>
 
         <EditText
+            android:id="@+id/ncin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="CIN"
             android:inputType="number"
-            android:padding="15sp"
-            android:textStyle="bold" />
+            android:padding="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20sp"
+            android:drawableEnd="@drawable/ic_cin"/>
 
         <EditText
+            android:id="@+id/yourPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
             android:inputType="textPassword"
-            android:padding="15sp"
-            android:textStyle="bold" />
+            android:padding="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20sp"
+            android:drawableEnd="@drawable/ic_password"/>
+        <EditText
+            android:id="@+id/confirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Your Password"
+            android:inputType="textPassword"
+            android:padding="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20sp"
+            android:drawableEnd="@drawable/ic_password"/>
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -100,5 +138,5 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-
 </LinearLayout>
+</ScrollView>
