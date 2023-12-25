@@ -42,6 +42,7 @@ public class SignInActivity extends AppCompatActivity {
         mail=findViewById(R.id.mail);
         password=findViewById(R.id.password);
         signIn=findViewById(R.id.signIn);
+
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
         remember=findViewById(R.id.remember);
@@ -49,7 +50,7 @@ public class SignInActivity extends AppCompatActivity {
         SharedPreferences preferences =getSharedPreferences("checkBox",MODE_PRIVATE);
         boolean checkBoxRemember=preferences.getBoolean("remember",false);
         if (checkBoxRemember){
-            startActivity(new Intent(SignInActivity.this,ProfileActivity.class));
+            startActivity(new Intent(SignInActivity.this,Home.class));
         }else{
             Toast.makeText(this, "please login", Toast.LENGTH_SHORT).show();
         }
@@ -100,7 +101,7 @@ public class SignInActivity extends AppCompatActivity {
             FirebaseUser connectedUser = firebaseAuth.getCurrentUser();
             boolean isEmailFlag = connectedUser.isEmailVerified();
             if (isEmailFlag){
-                startActivity(new Intent(SignInActivity.this,ProfileActivity.class));
+                startActivity(new Intent(SignInActivity.this,Home.class));
             }else{
                 Toast.makeText(this, "Please Verify your email's account", Toast.LENGTH_SHORT).show();
                 firebaseAuth.signOut();

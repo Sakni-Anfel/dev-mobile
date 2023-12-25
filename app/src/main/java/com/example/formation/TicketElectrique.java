@@ -23,59 +23,35 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
+public class TicketElectrique extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
 
-public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-private Button buttonDevice;
-private DrawerLayout drawerLayout;
-private NavigationView navigationView;
-private ImageView menuDevice;
-private EditText deviceValueHome,deviceNameHome;
-private FirebaseDatabase firebaseDatabase;
-private DatabaseReference reference;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private ImageView menuDevice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        buttonDevice=findViewById(R.id.buttonDevice);
-        drawerLayout=findViewById(R.id.drawer_layout_home);
-        navigationView=findViewById(R.id.navigation_home);
-        menuDevice=findViewById(R.id.menuDevice);
-        deviceNameHome=findViewById(R.id.deviceName);
-        deviceValueHome=findViewById(R.id.deviceValue);
-        firebaseDatabase=FirebaseDatabase.getInstance();
-        reference= firebaseDatabase.getReference();
+        setContentView(R.layout.activity_ticket_electrique);
+        drawerLayout=findViewById(R.id.drawer_layout_ticket);
+        navigationView=findViewById(R.id.navigation_ticket);
+        menuDevice=findViewById(R.id.menuDeviceTicket);
 
-
-        buttonDevice.setOnClickListener(view -> {
-            String deviceNameS=deviceNameHome.getText().toString();
-            String deviceValueS=deviceValueHome.getText().toString();
-
-            HashMap<String,String> deviceMap = new HashMap<>();
-            deviceMap.put("name",deviceNameS);
-            deviceMap.put("value",deviceValueS);
-            reference.child("Devices").push().setValue(deviceMap);
-            deviceNameHome.setText("");
-            deviceValueHome.setText("");
-            deviceNameHome.clearFocus();
-            deviceValueHome.clearFocus();
-            Toast.makeText(this, "saved device", Toast.LENGTH_SHORT).show();
-        });
-    navigationDrawer();
+        navigationDrawer();
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.devises:
+                        startActivity(new Intent(TicketElectrique.this,Home.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
-                    break;
+                        break;
                     case R.id.ticketE:
-                        startActivity(new Intent(Home.this,TicketElectrique.class));
+
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.Profile:
-                        startActivity(new Intent(Home.this,ProfileActivity.class));
+                        startActivity(new Intent(TicketElectrique.this,ProfileActivity.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
@@ -87,13 +63,13 @@ private DatabaseReference reference;
 
     private void navigationDrawer() {
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.devises);
+        navigationView.setCheckedItem(R.id.ticketE);
         navigationView.bringToFront();
         menuDevice.setOnClickListener(view -> {
             if(drawerLayout.isDrawerVisible(GravityCompat.START)) {
                 drawerLayout.closeDrawer(GravityCompat.START);
             }else drawerLayout.openDrawer(GravityCompat.START);
-drawerLayout.setScrimColor(getResources().getColor(R.color.colorApp));
+            drawerLayout.setScrimColor(getResources().getColor(R.color.colorApp));
         });
     }
 
